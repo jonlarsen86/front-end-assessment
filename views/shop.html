@@ -1,23 +1,23 @@
 <!--Repeat over your data and display it below -->
 
-<div class="product-grid__item   grid__item one-half large--one-third" >
+<div class="product-grid__item   grid__item one-half large--one-third" ng-repeat="product in shopData">
 
     <!--Product Image-->
     <!--Product Image click Should redirect to the product-details section. remember to pass along the product id so you can make an api call
     to get the specific product details-->
-    <a class="product-grid__product" >
-        <img class="product-grid__img"   sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" alt="">
+    <a class="product-grid__product" ui-sref="product-details({id: product.id})">
+        <img class="product-grid__img" ng-src="{{product.image}}" sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" alt="">
     </a>
 
     <!--Product Meta-->
     <div class="product-grid__meta">
-        <!-- Tittle-->
+        <!-- Title-->
         <!--Title click Should redirect to the details section-->
-        <h3 class="product-grid__name"><a><!--Title--></a></h3>
+        <h3 class="product-grid__name"><a ui-sref="product-details({id: product.id})">{{product.title}}</a></h3>
         <!--Product Description-->
-        <h4 class="product-grid__sub"><!--Desc--></h4>
+        <h4 class="product-grid__sub">{{product.desc}}</h4>
 
         <!--Product Price-->
-        <div class="product-grid__price"><!--Price--></div>
+        <div class="product-grid__price">{{product.price}}</div>
     </div>
 </div>
