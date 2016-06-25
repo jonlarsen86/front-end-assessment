@@ -4,7 +4,6 @@
     ProductDetailsCtrl.$inject = ['$scope', '$stateParams', 'mainService'];
 
     function ProductDetailsCtrl($scope, $stateParams, mainService) {
-        console.log($stateParams);
 
         mainService.getDetails($stateParams.id)
             .then(function(results){
